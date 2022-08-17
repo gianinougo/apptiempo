@@ -51,7 +51,6 @@ const Card = ({loadingData, showData, weather, forecast}) => {
                                     <p className="card-date">{date}</p>
                                     <h1 className="card-temp">{(weather.main.temp - 273.15).toFixed(1)}°C</h1>
                                     <p className="card-desc"><img src={url} alt={weather.weather[0].description} />{(weather.weather[0].description).toUpperCase()}</p>
-                                    
                                     <img src= "https://images.pexels.com/photos/5641953/pexels-photo-5641953.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="img-fluid rounded-start imagen" alt="city"></img>
                                 </div>
                                 <div className="col-md-8">

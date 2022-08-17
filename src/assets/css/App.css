@@ -36,7 +36,7 @@ body{
 .card-temp {
   position: absolute;
   padding-left: 20px;
-  margin-top: 340px;
+  margin-top: 300px;
   font-size: 50px;
   text-shadow: 1px 1px 1px #000;
   color: white;
@@ -45,7 +45,7 @@ body{
 .card-desc {
   position: absolute;
   padding-left: 10px;
-  margin-top: 400px;
+  margin-top: 360px;
   text-shadow: 1px 1px 1px #000;
 }
 
