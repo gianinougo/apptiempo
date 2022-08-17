@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import Form from "./Form";
 import Card from "./Card";
 
-
 const WeatherPanel = () => {
 
     let urlWeather = 'https://api.openweathermap.org/data/2.5/weather?appid=c493f3a45248ed9d8cb1fe7997858cff&lang=es';
@@ -14,6 +13,7 @@ const WeatherPanel = () => {
     const [forecast, setForecast] = useState([]);
     const [loading, setLoading] = useState(false);
     const [show, setShow] = useState(false);
+    /* eslint-disable no-unused-vars */
     const [location, setLocation] = useState('');
 
 
@@ -26,8 +26,10 @@ const WeatherPanel = () => {
         urlWeather = urlWeather + cityUrl + loc;
 
         await fetch(urlWeather).then((response) =>{
-            if(!response.ok) throw {response}
-            return response.json();
+            if(response.ok){
+                return response.json();
+            }
+            throw new Error('Network response was not ok.');
         }).then((weatherData) =>{
             console.log(weatherData);
             setWeather(weatherData);
@@ -42,8 +44,10 @@ const WeatherPanel = () => {
         urlForecast = urlForecast + cityUrl + loc;
 
         await fetch(urlForecast).then((response) =>{
-            if(!response.ok) throw {response}
-            return response.json();
+            if(response.ok){
+                return response.json();
+            }
+            throw new Error('Network response was not ok.');
         }).then((forecastData) =>{
             console.log(forecastData);
             setForecast(forecastData);
